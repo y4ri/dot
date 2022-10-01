@@ -1,0 +1,13 @@
+{
+    "workbench.startupEditor": "none",
+    "telemetry.telemetryLevel": "off",
+    "remote.SSH.remotePlatform": {
+        "vagrant": "linux"
+    },
+    "editor.fontFamily": "Hack",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "gruvboxMaterial.darkWorkbench": "flat",
+    "gruvboxMaterial.darkContrast": "hard",
+    "gruvboxMaterial.darkPalette": "original",
+    "editor.fontSize": 15
+}

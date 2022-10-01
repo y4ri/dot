@@ -37,7 +37,9 @@
         "defaults": 
         {
             "bellStyle": "none",
+            "closeOnExit": "always",
             "colorScheme": "Gruvbox",
+            "cursorShape": "filledBox",
             "font": 
             {
                 "face": "Cascadia Mono"
