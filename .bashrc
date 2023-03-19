@@ -22,17 +22,15 @@ __ps1() {
   [[ $B = master || $B = main ]] && b="$r"
   [[ -n "$B" ]] && B="$g($b$B$g)"
 
-  short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
-  long="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n$g╚ $p$P$x "
-  double="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir\n$g║ $B\n$g╚ $p$P$x "
-
-  if (( ${#countme} > PROMPT_MAX )); then
-    PS1="$double"
-  elif (( ${#countme} > PROMPT_LONG )); then
-    PS1="$long"
+  # check if in virtualenv
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
   else
-    PS1="$short"
+      PYTHON_VIRTUALENV="$x(`basename \"$VIRTUAL_ENV\"`) "
   fi
+  
+  short="${PYTHON_VIRTUALENV}$g[$u\u$g$PROMPT_AT$h\h$g:$w$dir$B]$p$P$x "
+  PS1="$short"
 }
 
 PROMPT_COMMAND="__ps1"
