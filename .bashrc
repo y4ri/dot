@@ -29,8 +29,15 @@ __ps1() {
       PYTHON_VIRTUALENV="$x(`basename \"$VIRTUAL_ENV\"`) "
   fi
   
-  short="${PYTHON_VIRTUALENV}$g[$u\u$g$PROMPT_AT$h\h$g:$w$dir$B]$p$P$x "
+  short="${PYTHON_VIRTUALENV}$g[$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$g]$p$P$x "
   PS1="$short"
 }
 
 PROMPT_COMMAND="__ps1"
+
+# FZF mappings and options
+[ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
+# use ripgrep
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+# install bat, lookup files
+export FZF_DEFAULT_OPTS="--height 50% -1 --layout=reverse-list --multi --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300'"
