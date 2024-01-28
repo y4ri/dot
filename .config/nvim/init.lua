@@ -150,15 +150,21 @@ require('lazy').setup({
     },
   },
 
+  -- {
+  --   -- Theme inspired by Atom
+  --   'catppuccin/nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'catppuccin'
+  --   end,
+  -- },
   {
     -- Theme inspired by Atom
-    'catppuccin/nvim',
+    'ellisonleao/gruvbox.nvim',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'catppuccin'
-    end,
+    config = true, 
+    opts = {},
   },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -166,7 +172,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },
@@ -564,5 +570,35 @@ vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
+vim.wo.relativenumber = true
+
+require("gruvbox").setup({
+  terminal_colors = true, -- add neovim terminal colors
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = true,
+    emphasis = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  contrast = "hard", -- can be "hard", "soft" or empty string
+  overrides = {},
+  dim_inactive = false,
+  transparent_mode = false,
+  palette_overrides = {
+    dark0_hard = "#1b1b1b",
+    dark3 = "#3c3c3c",
+  },
+})
+vim.cmd([[colorscheme gruvbox]])
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
