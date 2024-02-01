@@ -1,0 +1,19 @@
+import = ["/home/xyz/.config/alacritty/themes/kanagawa.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "UbuntuMonoNerdFont"
+style = "Regular"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+
+[window.padding]
+x = 10
+y = 10

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+alias vim="nvim"
+alias vi="nvim"
+alias ll="ls -alhF"
