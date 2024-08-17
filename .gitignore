@@ -1,3 +1,4 @@
 ## vagrant
 vm-setup/.vagrant/
 vm-setup/files/
+tmux/.config/tmux/plugins/
